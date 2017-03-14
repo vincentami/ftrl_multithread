@@ -10,8 +10,8 @@ DIR_OBJ:=obj/
 CC:=g++
 EXT:=cpp
 
-#TARGET:=ftrl_train
-TARGET:=ftrl_predict
+TARGET:=ftrl_train
+#TARGET:=ftrl_predict
 #TARGET:=auc
 # The target executable file.
 
