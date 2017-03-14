@@ -1,0 +1,115 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+main	ftrl/auc.cpp	/^int main(int argc,char* argv[]) {$/;"	f
+readFile	ftrl/auc.cpp	/^void readFile(std::vector<int>& labels, std::vector<double>& probs){$/;"	f
+scoreAuc	ftrl/auc.cpp	/^double scoreAuc(std::vector<int>& labels, std::vector<double>& probs){$/;"	f
+cap	ftrl/ftrl.cpp	/^const int cap = 5000;$/;"	v
+init	ftrl/ftrl.cpp	/^bool FTRL::init(int type){$/;"	f	class:FTRL
+innerSpliter	ftrl/ftrl.cpp	/^const std::string innerSpliter =":";$/;"	v
+inputThread	ftrl/ftrl.cpp	/^void FTRL::inputThread(){$/;"	f	class:FTRL
+loadModel	ftrl/ftrl.cpp	/^bool FTRL::loadModel(std::ifstream& fModel){$/;"	f	class:FTRL
+loadNonZeroWeight	ftrl/ftrl.cpp	/^bool FTRL::loadNonZeroWeight(std::ifstream& fModel){$/;"	f	class:FTRL
+log_num	ftrl/ftrl.cpp	/^const int log_num =200000;$/;"	v
+parseLineToEntity	ftrl/ftrl.cpp	/^bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {$/;"	f	class:FTRL
+predict	ftrl/ftrl.cpp	/^double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {$/;"	f	class:FTRL
+predictThread	ftrl/ftrl.cpp	/^void FTRL::predictThread(){$/;"	f	class:FTRL
+printW	ftrl/ftrl.cpp	/^void FTRL::printW(std::ofstream& out) {$/;"	f	class:FTRL
+run	ftrl/ftrl.cpp	/^void FTRL::run(int type){$/;"	f	class:FTRL
+spliter	ftrl/ftrl.cpp	/^const std::string spliter=" ";$/;"	v
+train	ftrl/ftrl.cpp	/^void FTRL::train(const std::vector<pair<std::string, double> >& fea, int label) {$/;"	f	class:FTRL
+trainThread	ftrl/ftrl.cpp	/^void FTRL::trainThread(){$/;"	f	class:FTRL
+main	ftrl/ftrl_predict.cpp	/^int main(int argc,char* argv[]) {$/;"	f
+Option	ftrl/ftrl_train.cpp	/^struct Option {$/;"	s	file:
+alpha	ftrl/ftrl_train.cpp	/^    double alpha = 0.05f;$/;"	m	struct:Option	file:
+argv_to_args	ftrl/ftrl_train.cpp	/^std::vector<std::string> argv_to_args(int const argc, char const * const * const argv) {$/;"	f
+b_addBias	ftrl/ftrl_train.cpp	/^    bool b_addBias = false;$/;"	m	struct:Option	file:
+b_init	ftrl/ftrl_train.cpp	/^    bool b_init = false;$/;"	m	struct:Option	file:
+beta	ftrl/ftrl_train.cpp	/^    double beta = 1.0f;$/;"	m	struct:Option	file:
+init_m_path	ftrl/ftrl_train.cpp	/^    std::string init_m_path;$/;"	m	struct:Option	file:
+lambda1	ftrl/ftrl_train.cpp	/^    double lambda1 = 0.1f;$/;"	m	struct:Option	file:
+lambda2	ftrl/ftrl_train.cpp	/^    double lambda2 = 5.0f;$/;"	m	struct:Option	file:
+main	ftrl/ftrl_train.cpp	/^int main(int argc,char* argv[]) {$/;"	f
+model_path	ftrl/ftrl_train.cpp	/^    std::string model_path;$/;"	m	struct:Option	file:
+model_size	ftrl/ftrl_train.cpp	/^    int model_size = 1000000;$/;"	m	struct:Option	file:
+nr_threads	ftrl/ftrl_train.cpp	/^    int nr_threads = 1;$/;"	m	struct:Option	file:
+parse_option	ftrl/ftrl_train.cpp	/^Option parse_option(std::vector<std::string> const &args) {$/;"	f
+train_help	ftrl/ftrl_train.cpp	/^std::string train_help() {$/;"	f
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+EntityUnit	include/entityUnit.h	/^struct EntityUnit{$/;"	s
+FTRL_ENTITYUNIT_H	include/entityUnit.h	3;"	d
+feature	include/entityUnit.h	/^    std::vector<std::pair<std::string, double> > feature;$/;"	m	struct:EntityUnit
+label	include/entityUnit.h	/^    int label;$/;"	m	struct:EntityUnit
+print	include/entityUnit.h	/^    std::string print(){$/;"	f	struct:EntityUnit
+FTRL	include/ftrl.h	/^    FTRL(double a, double b, double c, double d, int t_num, int model_size, bool b_addBias) {$/;"	f	class:FTRL
+FTRL	include/ftrl.h	/^    FTRL(int t_num, std::string f_out){$/;"	f	class:FTRL
+FTRL	include/ftrl.h	/^class FTRL{$/;"	c
+FTRL_FTRL_H	include/ftrl.h	3;"	d
+WGSZN	include/ftrl.h	/^    VirtualDB* WGSZN;$/;"	m	class:FTRL
+addBias	include/ftrl.h	/^    bool addBias;$/;"	m	class:FTRL
+alpha	include/ftrl.h	/^    double alpha;$/;"	m	class:FTRL
+beta	include/ftrl.h	/^    double beta;$/;"	m	class:FTRL
+fPredict	include/ftrl.h	/^    std::ofstream fPredict;$/;"	m	class:FTRL
+lambda1	include/ftrl.h	/^    double lambda1;$/;"	m	class:FTRL
+lambda2	include/ftrl.h	/^    double lambda2;$/;"	m	class:FTRL
+lineQueue	include/ftrl.h	/^    std::queue<std::string> lineQueue;$/;"	m	class:FTRL
+outMtx	include/ftrl.h	/^    std::mutex queueMtx, outMtx;$/;"	m	class:FTRL
+queueMtx	include/ftrl.h	/^    std::mutex queueMtx, outMtx;$/;"	m	class:FTRL
+sem	include/ftrl.h	/^    sem_t sem, semPro;$/;"	m	class:FTRL
+semPro	include/ftrl.h	/^    sem_t sem, semPro;$/;"	m	class:FTRL
+threadNum	include/ftrl.h	/^    int threadNum;$/;"	m	class:FTRL
+threadVec	include/ftrl.h	/^    std::vector<std::thread> threadVec;$/;"	m	class:FTRL
+type	include/ftrl.h	/^    int type;$/;"	m	class:FTRL
+FTRL_MAPDB_H	include/mapDB.h	2;"	d
+MapDB	include/mapDB.h	/^    MapDB(){}$/;"	f	class:MapDB
+MapDB	include/mapDB.h	/^class MapDB: public VirtualDB{$/;"	c
+bias	include/mapDB.h	/^    std::string bias = "bias";$/;"	m	class:MapDB
+get	include/mapDB.h	/^    double get(std::string k){$/;"	f	class:MapDB
+getBiasKey	include/mapDB.h	/^    std::string& getBiasKey(){$/;"	f	class:MapDB
+getOrInitDB	include/mapDB.h	/^    ModelUnit* getOrInitDB(std::string k){$/;"	f	class:MapDB
+isBiasInModel	include/mapDB.h	/^    bool isBiasInModel(){$/;"	f	class:MapDB
+loadModel	include/mapDB.h	/^    bool loadModel(std::ifstream& in){$/;"	f	class:MapDB
+loadNonZeroWeight	include/mapDB.h	/^    bool loadNonZeroWeight(std::ifstream& in){$/;"	f	class:MapDB
+mtx	include/mapDB.h	/^    std::mutex mtx;$/;"	m	class:MapDB
+print	include/mapDB.h	/^    void print(std::ofstream& out){$/;"	f	class:MapDB
+vMap	include/mapDB.h	/^    std::unordered_map<std::string, ModelUnit*> vMap;$/;"	m	class:MapDB
+vWeight	include/mapDB.h	/^    std::unordered_map<std::string, double> vWeight;$/;"	m	class:MapDB
+FTRL_MODELUNIT_H	include/modelUnit.h	2;"	d
+ModelUnit	include/modelUnit.h	/^    ModelUnit(){w=0.0;g=0.0;s=0.0;z=0.0;n=0.0;}$/;"	f	struct:ModelUnit
+ModelUnit	include/modelUnit.h	/^    ModelUnit(double w_i,double g_i,double s_i,double z_i,double n_i){w=w_i;g=g_i;s=s_i;z=z_i;n=n_i;};$/;"	f	struct:ModelUnit
+ModelUnit	include/modelUnit.h	/^struct ModelUnit{$/;"	s
+g	include/modelUnit.h	/^    double g;$/;"	m	struct:ModelUnit
+mtx	include/modelUnit.h	/^    std::mutex mtx;$/;"	m	struct:ModelUnit
+n	include/modelUnit.h	/^    double n;$/;"	m	struct:ModelUnit
+s	include/modelUnit.h	/^    double s;$/;"	m	struct:ModelUnit
+w	include/modelUnit.h	/^    double w;$/;"	m	struct:ModelUnit
+z	include/modelUnit.h	/^    double z;$/;"	m	struct:ModelUnit
+FTRL_UTILS_H	include/utils.h	2;"	d
+utils	include/utils.h	/^class utils {$/;"	c
+FTRL_VECTORDB_H	include/vectorDB.h	3;"	d
+VectorDB	include/vectorDB.h	/^    VectorDB(){}$/;"	f	class:VectorDB
+VectorDB	include/vectorDB.h	/^    VectorDB(int model_size){$/;"	f	class:VectorDB
+VectorDB	include/vectorDB.h	/^class VectorDB: public VirtualDB{$/;"	c
+bias	include/vectorDB.h	/^    std::string bias="0";$/;"	m	class:VectorDB
+get	include/vectorDB.h	/^    double get(std::string k){$/;"	f	class:VectorDB
+getBiasKey	include/vectorDB.h	/^    std::string& getBiasKey(){$/;"	f	class:VectorDB
+getOrInitDB	include/vectorDB.h	/^    ModelUnit* getOrInitDB(std::string k){$/;"	f	class:VectorDB
+isBiasInModel	include/vectorDB.h	/^    bool isBiasInModel(){$/;"	f	class:VectorDB
+loadModel	include/vectorDB.h	/^    bool loadModel(std::ifstream& in){$/;"	f	class:VectorDB
+loadNonZeroWeight	include/vectorDB.h	/^    bool loadNonZeroWeight(std::ifstream& in){$/;"	f	class:VectorDB
+mtx	include/vectorDB.h	/^    std::mutex mtx;$/;"	m	class:VectorDB
+print	include/vectorDB.h	/^    void print(std::ofstream& out){$/;"	f	class:VectorDB
+vMap	include/vectorDB.h	/^    std::vector<ModelUnit*> vMap;$/;"	m	class:VectorDB
+vWeight	include/vectorDB.h	/^    std::vector<double> vWeight;$/;"	m	class:VectorDB
+FTRL_VIRTUALDB_H	include/virtualDB.h	6;"	d
+VirtualDB	include/virtualDB.h	/^class VirtualDB{$/;"	c
+smallDouble	include/virtualDB.h	/^    double smallDouble = 0.0000001;$/;"	m	class:VirtualDB
+main	script/AUC.py	/^def main():$/;"	f
+read_file	script/AUC.py	/^def read_file():$/;"	f
+scoreAUC	script/AUC.py	/^def scoreAUC(labels,probs):$/;"	f
+kPrecision	utils/utils.cpp	/^const double kPrecision = 0.0000000001;$/;"	v
+sgn	utils/utils.cpp	/^int utils::sgn(double x) {$/;"	f	class:utils
+sigmoid	utils/utils.cpp	/^double utils::sigmoid(double a) {$/;"	f	class:utils
+splitString	utils/utils.cpp	/^void utils::splitString(std::string& line, char delimiter, std::vector<std::string>* r){$/;"	f	class:utils

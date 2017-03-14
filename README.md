@@ -1,1 +1,1 @@
-# ftrl_multithread
+# ftrl

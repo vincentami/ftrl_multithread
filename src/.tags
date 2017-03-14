@@ -1,0 +1,115 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+EntityUnit	include/entityUnit.h	/^struct EntityUnit{$/;"	s
+FTRL	include/ftrl.h	/^    FTRL(double a, double b, double c, double d, int t_num, int model_size, bool b_addBias) {$/;"	f	class:FTRL
+FTRL	include/ftrl.h	/^    FTRL(int t_num, std::string f_out){$/;"	f	class:FTRL
+FTRL	include/ftrl.h	/^class FTRL{$/;"	c
+FTRL_ENTITYUNIT_H	include/entityUnit.h	3;"	d
+FTRL_FTRL_H	include/ftrl.h	3;"	d
+FTRL_MAPDB_H	include/mapDB.h	2;"	d
+FTRL_MODELUNIT_H	include/modelUnit.h	2;"	d
+FTRL_UTILS_H	include/utils.h	2;"	d
+FTRL_VECTORDB_H	include/vectorDB.h	3;"	d
+FTRL_VIRTUALDB_H	include/virtualDB.h	6;"	d
+MapDB	include/mapDB.h	/^    MapDB(){}$/;"	f	class:MapDB
+MapDB	include/mapDB.h	/^class MapDB: public VirtualDB{$/;"	c
+ModelUnit	include/modelUnit.h	/^    ModelUnit(){w=0.0;g=0.0;s=0.0;z=0.0;n=0.0;}$/;"	f	struct:ModelUnit
+ModelUnit	include/modelUnit.h	/^    ModelUnit(double w_i,double g_i,double s_i,double z_i,double n_i){w=w_i;g=g_i;s=s_i;z=z_i;n=n_i;};$/;"	f	struct:ModelUnit
+ModelUnit	include/modelUnit.h	/^struct ModelUnit{$/;"	s
+Option	ftrl/ftrl_train.cpp	/^struct Option {$/;"	s	file:
+VectorDB	include/vectorDB.h	/^    VectorDB(){}$/;"	f	class:VectorDB
+VectorDB	include/vectorDB.h	/^    VectorDB(int model_size){$/;"	f	class:VectorDB
+VectorDB	include/vectorDB.h	/^class VectorDB: public VirtualDB{$/;"	c
+VirtualDB	include/virtualDB.h	/^class VirtualDB{$/;"	c
+WGSZN	include/ftrl.h	/^    VirtualDB* WGSZN;$/;"	m	class:FTRL
+addBias	include/ftrl.h	/^    bool addBias;$/;"	m	class:FTRL
+alpha	ftrl/ftrl_train.cpp	/^    double alpha = 0.05f;$/;"	m	struct:Option	file:
+alpha	include/ftrl.h	/^    double alpha;$/;"	m	class:FTRL
+argv_to_args	ftrl/ftrl_train.cpp	/^std::vector<std::string> argv_to_args(int const argc, char const * const * const argv) {$/;"	f
+b_addBias	ftrl/ftrl_train.cpp	/^    bool b_addBias = false;$/;"	m	struct:Option	file:
+b_init	ftrl/ftrl_train.cpp	/^    bool b_init = false;$/;"	m	struct:Option	file:
+beta	ftrl/ftrl_train.cpp	/^    double beta = 1.0f;$/;"	m	struct:Option	file:
+beta	include/ftrl.h	/^    double beta;$/;"	m	class:FTRL
+bias	include/mapDB.h	/^    std::string bias = "bias";$/;"	m	class:MapDB
+bias	include/vectorDB.h	/^    std::string bias="0";$/;"	m	class:VectorDB
+cap	ftrl/ftrl.cpp	/^const int cap = 5000;$/;"	v
+fPredict	include/ftrl.h	/^    std::ofstream fPredict;$/;"	m	class:FTRL
+feature	include/entityUnit.h	/^    std::vector<std::pair<std::string, double> > feature;$/;"	m	struct:EntityUnit
+g	include/modelUnit.h	/^    double g;$/;"	m	struct:ModelUnit
+get	include/mapDB.h	/^    double get(std::string k){$/;"	f	class:MapDB
+get	include/vectorDB.h	/^    double get(std::string k){$/;"	f	class:VectorDB
+getBiasKey	include/mapDB.h	/^    std::string& getBiasKey(){$/;"	f	class:MapDB
+getBiasKey	include/vectorDB.h	/^    std::string& getBiasKey(){$/;"	f	class:VectorDB
+getOrInitDB	include/mapDB.h	/^    ModelUnit* getOrInitDB(std::string k){$/;"	f	class:MapDB
+getOrInitDB	include/vectorDB.h	/^    ModelUnit* getOrInitDB(std::string k){$/;"	f	class:VectorDB
+init	ftrl/ftrl.cpp	/^bool FTRL::init(int type){$/;"	f	class:FTRL
+init_m_path	ftrl/ftrl_train.cpp	/^    std::string init_m_path;$/;"	m	struct:Option	file:
+innerSpliter	ftrl/ftrl.cpp	/^const std::string innerSpliter =":";$/;"	v
+inputThread	ftrl/ftrl.cpp	/^void FTRL::inputThread(){$/;"	f	class:FTRL
+isBiasInModel	include/mapDB.h	/^    bool isBiasInModel(){$/;"	f	class:MapDB
+isBiasInModel	include/vectorDB.h	/^    bool isBiasInModel(){$/;"	f	class:VectorDB
+kPrecision	utils/utils.cpp	/^const double kPrecision = 0.0000000001;$/;"	v
+label	include/entityUnit.h	/^    int label;$/;"	m	struct:EntityUnit
+lambda1	ftrl/ftrl_train.cpp	/^    double lambda1 = 0.1f;$/;"	m	struct:Option	file:
+lambda1	include/ftrl.h	/^    double lambda1;$/;"	m	class:FTRL
+lambda2	ftrl/ftrl_train.cpp	/^    double lambda2 = 5.0f;$/;"	m	struct:Option	file:
+lambda2	include/ftrl.h	/^    double lambda2;$/;"	m	class:FTRL
+lineQueue	include/ftrl.h	/^    std::queue<std::string> lineQueue;$/;"	m	class:FTRL
+loadModel	ftrl/ftrl.cpp	/^bool FTRL::loadModel(std::ifstream& fModel){$/;"	f	class:FTRL
+loadModel	include/mapDB.h	/^    bool loadModel(std::ifstream& in){$/;"	f	class:MapDB
+loadModel	include/vectorDB.h	/^    bool loadModel(std::ifstream& in){$/;"	f	class:VectorDB
+loadNonZeroWeight	ftrl/ftrl.cpp	/^bool FTRL::loadNonZeroWeight(std::ifstream& fModel){$/;"	f	class:FTRL
+loadNonZeroWeight	include/mapDB.h	/^    bool loadNonZeroWeight(std::ifstream& in){$/;"	f	class:MapDB
+loadNonZeroWeight	include/vectorDB.h	/^    bool loadNonZeroWeight(std::ifstream& in){$/;"	f	class:VectorDB
+log_num	ftrl/ftrl.cpp	/^const int log_num =200000;$/;"	v
+main	ftrl/auc.cpp	/^int main(int argc,char* argv[]) {$/;"	f
+main	ftrl/ftrl_predict.cpp	/^int main(int argc,char* argv[]) {$/;"	f
+main	ftrl/ftrl_train.cpp	/^int main(int argc,char* argv[]) {$/;"	f
+main	script/AUC.py	/^def main():$/;"	f
+model_path	ftrl/ftrl_train.cpp	/^    std::string model_path;$/;"	m	struct:Option	file:
+model_size	ftrl/ftrl_train.cpp	/^    int model_size = 1000000;$/;"	m	struct:Option	file:
+mtx	include/mapDB.h	/^    std::mutex mtx;$/;"	m	class:MapDB
+mtx	include/modelUnit.h	/^    std::mutex mtx;$/;"	m	struct:ModelUnit
+mtx	include/vectorDB.h	/^    std::mutex mtx;$/;"	m	class:VectorDB
+n	include/modelUnit.h	/^    double n;$/;"	m	struct:ModelUnit
+nr_threads	ftrl/ftrl_train.cpp	/^    int nr_threads = 1;$/;"	m	struct:Option	file:
+outMtx	include/ftrl.h	/^    std::mutex queueMtx, outMtx;$/;"	m	class:FTRL
+parseLineToEntity	ftrl/ftrl.cpp	/^bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {$/;"	f	class:FTRL
+parse_option	ftrl/ftrl_train.cpp	/^Option parse_option(std::vector<std::string> const &args) {$/;"	f
+predict	ftrl/ftrl.cpp	/^double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {$/;"	f	class:FTRL
+predictThread	ftrl/ftrl.cpp	/^void FTRL::predictThread(){$/;"	f	class:FTRL
+print	include/entityUnit.h	/^    std::string print(){$/;"	f	struct:EntityUnit
+print	include/mapDB.h	/^    void print(std::ofstream& out){$/;"	f	class:MapDB
+print	include/vectorDB.h	/^    void print(std::ofstream& out){$/;"	f	class:VectorDB
+printW	ftrl/ftrl.cpp	/^void FTRL::printW(std::ofstream& out) {$/;"	f	class:FTRL
+queueMtx	include/ftrl.h	/^    std::mutex queueMtx, outMtx;$/;"	m	class:FTRL
+readFile	ftrl/auc.cpp	/^void readFile(std::vector<int>& labels, std::vector<double>& probs){$/;"	f
+read_file	script/AUC.py	/^def read_file():$/;"	f
+run	ftrl/ftrl.cpp	/^void FTRL::run(int type){$/;"	f	class:FTRL
+s	include/modelUnit.h	/^    double s;$/;"	m	struct:ModelUnit
+scoreAUC	script/AUC.py	/^def scoreAUC(labels,probs):$/;"	f
+scoreAuc	ftrl/auc.cpp	/^double scoreAuc(std::vector<int>& labels, std::vector<double>& probs){$/;"	f
+sem	include/ftrl.h	/^    sem_t sem, semPro;$/;"	m	class:FTRL
+semPro	include/ftrl.h	/^    sem_t sem, semPro;$/;"	m	class:FTRL
+sgn	utils/utils.cpp	/^int utils::sgn(double x) {$/;"	f	class:utils
+sigmoid	utils/utils.cpp	/^double utils::sigmoid(double a) {$/;"	f	class:utils
+smallDouble	include/virtualDB.h	/^    double smallDouble = 0.0000001;$/;"	m	class:VirtualDB
+splitString	utils/utils.cpp	/^void utils::splitString(std::string& line, char delimiter, std::vector<std::string>* r){$/;"	f	class:utils
+spliter	ftrl/ftrl.cpp	/^const std::string spliter=" ";$/;"	v
+threadNum	include/ftrl.h	/^    int threadNum;$/;"	m	class:FTRL
+threadVec	include/ftrl.h	/^    std::vector<std::thread> threadVec;$/;"	m	class:FTRL
+train	ftrl/ftrl.cpp	/^void FTRL::train(const std::vector<pair<std::string, double> >& fea, int label) {$/;"	f	class:FTRL
+trainThread	ftrl/ftrl.cpp	/^void FTRL::trainThread(){$/;"	f	class:FTRL
+train_help	ftrl/ftrl_train.cpp	/^std::string train_help() {$/;"	f
+type	include/ftrl.h	/^    int type;$/;"	m	class:FTRL
+utils	include/utils.h	/^class utils {$/;"	c
+vMap	include/mapDB.h	/^    std::unordered_map<std::string, ModelUnit*> vMap;$/;"	m	class:MapDB
+vMap	include/vectorDB.h	/^    std::vector<ModelUnit*> vMap;$/;"	m	class:VectorDB
+vWeight	include/mapDB.h	/^    std::unordered_map<std::string, double> vWeight;$/;"	m	class:MapDB
+vWeight	include/vectorDB.h	/^    std::vector<double> vWeight;$/;"	m	class:VectorDB
+w	include/modelUnit.h	/^    double w;$/;"	m	struct:ModelUnit
+z	include/modelUnit.h	/^    double z;$/;"	m	struct:ModelUnit
