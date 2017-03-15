@@ -242,7 +242,6 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     string modelName(splitRes[0]);
     size_t index = modelName.find(MODELNAME);
     if (index == std::string::npos){
-        cout << "modelName  " << endl;
         return false;
     }else {
         splitRes.erase(splitRes.begin());
@@ -287,7 +286,7 @@ bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {
             if(value!=0)
                 entity->feature.push_back(std::make_pair(key,value));
 
-            cout << "key: value-> " << key  << ":" << value << endl; 
+            //cout << "key: value-> " << key  << ":" << value << endl; 
         }
 
         if(addBias){
