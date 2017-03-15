@@ -228,11 +228,13 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     } 
 
     if (splitRes.size() <= 2){
+        cout << "splitRes.size()" << splitRes.size() << endl;
         return false;
     }
 
     label = atoi(splitRes[0].c_str());
     if (!(label == 0 ||label == 1)){
+        cout << "labe " << label << endl;
         return false;  
     }
     splitRes.erase(splitRes.begin());
@@ -241,6 +243,7 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     string modelName;
     size_t index = modelName.find(MODELNAME);
     if (index == std::string::npos){
+        cout << "modelName  " << endl;
         return false;
     }else {
         splitRes.erase(splitRes.begin());
@@ -285,6 +288,7 @@ bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {
             if(value!=0)
                 entity->feature.push_back(std::make_pair(key,value));
 
+            cout << "key: value-> " << key  << ":" << value << endl; 
         }
 
         if(addBias){
@@ -298,69 +302,6 @@ bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {
     }
 
     return true;
-
-    /*
-
-    std::size_t posb=line.find_first_not_of(spliter,0);
-    std::size_t pose=line.find_first_of(spliter,posb);
-
-    cout << "line:" << line << endl;
-
-    try {
-        int label=atoi(line.substr(posb,pose-posb).c_str());
-        entity->label=label>0?1:0;
-
-        pose=line.find_first_of(labelStart,posb);
-        if(pose==std::string::npos){
-            std::cout << "wrong line input\n" << line << std::endl;
-            throw "wrong line input";
-        }
-
-        cout << "1:" << posb << ":" << pose << ":"<< line.substr(posb, pose - posb) <<endl;
-
-        posb=line.find_first_of(spliter,pose);
-        if(posb==std::string::npos)
-            throw "wrong line input";
-
-
-        cout << "2:" << posb << ":" << pose << ":"<< line.substr(pose, posb - pose) <<endl;
-
-        pose = posb - 1;
-        while(pose<line.size()){
-            posb=line.find_first_not_of(spliter,pose);
-            if(posb==std::string::npos)
-                break;
-
-            pose=line.find_first_of(innerSpliter, posb);
-            if(pose==std::string::npos)
-                break;
-
-            key=line.substr(posb,pose-posb);
-            if(WGSZN->getBiasKey() == key){
-                std::cout << "input should not contains bias key: " << key << "\n" << line << std::endl;
-                throw "wrong line input";
-            }
-            posb=pose+1;
-            if(posb >= line.size())
-                throw "wrong line error!";
-            pose=line.find_first_of(spliter,posb);
-            value=std::stod(line.substr(posb,pose-posb));
-
-            std::cout << "filter out: " << key << " : " << value << std::endl;             
-            if(value!=0)
-                entity->feature.push_back(std::make_pair(key,value));
-        }
-        if(addBias){
-            key = WGSZN->getBiasKey();
-            value = 1.0;
-            entity->feature.push_back(std::make_pair(key,value));
-        }
-    }catch (const std::exception &e){
-        std::cout << "exception @parseLineToEntity : " << e.what() << " line: "<< line << std::endl;
-        return false;
-    }
-    return true;
-    */
 }
 
 void FTRL::printW(std::ofstream& out) {

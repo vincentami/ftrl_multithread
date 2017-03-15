@@ -1,5 +1,0 @@
-example:
-make
-cat train.txt |./ftrl_train -core 8 -m model.txt (8 thread)
-cat test.txt | ./ftrl_predict model.txt 4 result.txt  (4 thread)
-cat result.txt |./AUC.py 
