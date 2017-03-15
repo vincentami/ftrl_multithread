@@ -107,6 +107,7 @@ void FTRL::predictThread(){
     std::vector<std::string> output_vec;
     input_vec.reserve(cap);
     output_vec.reserve(cap);
+    bool parseSuc = false;
     while(true){
         input_vec.clear();
         output_vec.clear();
@@ -123,10 +124,13 @@ void FTRL::predictThread(){
         queueMtx.unlock();
         sem_post(&semPro);
         for(unsigned int i=0;i<input_vec.size();i++){
-            parseLineToEntity(input_vec[i], entity);
-            double p = predict(entity->feature);
-            output_vec.push_back(std::to_string(entity->label) + " " + std::to_string(p));
+            parseSuc = parseLineToEntity(input_vec[i], entity);
+            if(parseSuc) {
+                double p = predict(entity->feature);
+                output_vec.push_back(std::to_string(entity->label) + " " + std::to_string(p));
+            }
         }
+
         outMtx.lock();
         for(unsigned int i=0;i<output_vec.size();i++){
             fPredict << output_vec[i] <<std::endl;
