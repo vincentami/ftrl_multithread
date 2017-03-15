@@ -74,16 +74,20 @@ public:
         std::string line;
         //double fp=0;
         std::vector<std::string> r;
+        int i = 0;
         while(getline(in,line)){
+            i++;
             r.clear();
             utils::splitString(line, '\t', &r);
-            if (r.size() < 2) // key,W,G,S,Z,N
-            {
-                std::cout<<line<<std::endl;
-                return false;
+            if (r.size() != 6) { // key,W,G,S,Z,N
+                std::cout<<"Line: "<<i << " content:" <<line<<std::endl;
+                if(r.size() != 0) {
+                    return false;
+                }
+            }else {
+                if(fabs(std::stod(r[1])) > smallDouble || getBiasKey() == r[0])
+                    vWeight.insert(std::make_pair(r[0], std::stod(r[1])));
             }
-            if(fabs(std::stod(r[1])) > smallDouble || getBiasKey() == r[0])
-                vWeight.insert(std::make_pair(r[0], std::stod(r[1])));
         }
         return true;
     }
