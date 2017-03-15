@@ -127,7 +127,9 @@ int main(int argc,char* argv[]) {
         std::cout << e.what();
         return EXIT_FAILURE;
     }
+
     FTRL modelObj(opt.alpha, opt.beta, opt.lambda1, opt.lambda2, opt.nr_threads, opt.model_size, opt.b_addBias);
+    modelObj.printArgv();
 
     if(opt.b_init) {
         std::ifstream f_temp(opt.init_m_path.c_str());

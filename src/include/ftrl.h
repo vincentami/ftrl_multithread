@@ -47,6 +47,10 @@ public:
     void printW(std::ofstream& out);
     bool loadModel(std::ifstream& fModel);
     bool loadNonZeroWeight(std::ifstream& fModel);
+    void printArgv(){
+        std::cout <<"l1:" <<lambda1 << " l2:" << lambda2 << " al:" << alpha <<" be:"<<beta 
+            <<" bias:" << addBias << std::endl;
+    }
 
 private:
     double alpha;
