@@ -210,8 +210,8 @@ void FTRL::train(const std::vector<pair<std::string, double> >& fea, int label) 
 double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     double res = 0.0;
     for (unsigned int i = 0; i != fea.size(); ++i) {
-        std::cout << "predict::"<< fea[i].first << 
-        ":"<< WGSZN->get(fea[i].first) <<std::endl;
+        /*std::cout << "predict::"<< fea[i].first << 
+        ":"<< WGSZN->get(fea[i].first) <<std::endl;*/
         res += fea[i].second * (WGSZN->get(fea[i].first));
         //res += fea[i].second * (WGSZN->getOrInitDB(fea[i].first)->w);
     }
