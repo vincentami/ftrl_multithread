@@ -216,7 +216,8 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     return utils::sigmoid(res);
 }
 
- bool splitLabel(const std::string &line, std::vector<string> &splitRes, int &label){
+ bool splitLabel(const std::string &line, std::vector<string> &splitRes, 
+                    int &label, std::string &fename){
     stringstream ss;
     string item = "";
     char delim = '\t';
@@ -251,6 +252,7 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
         splitRes.erase(splitRes.begin());
     }    
 
+    fename = "M1";
     return true;
 }
 
@@ -261,11 +263,14 @@ bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {
     int label;
     uint32_t i;
     bool  ret;
+    uint64_t hashVal ; 
     string featureLabel ;
     std::size_t posb;
     std::vector<string> featureLabelVec;
+    std::string fename;
+    std::stringstream ss;
     try {
-        ret = splitLabel(line, featureLabelVec, label);
+        ret = splitLabel(line, featureLabelVec, label, fename);
         if(ret == false){
             return false;
         }
@@ -287,9 +292,12 @@ bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {
             }
 
             value = stod(featureLabel.substr(posb+1,featureLabel.length()));
-            if(value!=0)
-                entity->feature.push_back(std::make_pair(key,value));
-
+            if(value!=0) {
+                hashVal = utils::hash(key.c_str());
+                ss << hashVal << "#" << fename;
+                entity->feature.push_back(std::make_pair(ss.str(),value));
+                ss.str(std::string());
+            }
             //cout << "key: value-> " << key  << ":" << value << endl; 
         }
 
