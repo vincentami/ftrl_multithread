@@ -295,8 +295,8 @@ bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {
 
             value = stod(featureLabel.substr(posb+1,featureLabel.length()));
             if(value!=0) {
-                hashVal = utils::hash(key.c_str());
-                ss << hashVal << "#" << fename;
+                hashVal = utils::hash((key + "#" + fename).c_str());
+                ss << hashVal ;
                 entity->feature.push_back(std::make_pair(ss.str(),value));
                 ss.str(std::string());
             }
@@ -306,8 +306,8 @@ bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {
         if(addBias){
             key = WGSZN->getBiasKey();
             value = 1.0;
-            hashVal = utils::hash(key.c_str());
-            ss << hashVal << "#" << fename;
+            hashVal = utils::hash(("WO#"+ fename).c_str());
+            ss << hashVal ;
             entity->feature.push_back(std::make_pair(ss.str(),value));
             ss.str(std::string());
         }
