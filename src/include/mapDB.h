@@ -86,8 +86,10 @@ public:
                     return false;
                 }
             }else {
-                if(fabs(std::stod(r[1])) > smallDouble || getBiasKey() == r[0])
+                if(fabs(std::stod(r[1])) > smallDouble || getBiasKey() == r[0]){
                     vWeight.insert(std::make_pair(r[0], std::stod(r[1])));
+                    std::cout << "LOAD NONEZERO:"<< r[0] << ":" << r[1];
+                }
             }
         }
         return true;
