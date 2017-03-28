@@ -304,7 +304,10 @@ bool FTRL::parseLineToEntity(const std::string& line, EntityUnit *entity) {
         if(addBias){
             key = WGSZN->getBiasKey();
             value = 1.0;
-            entity->feature.push_back(std::make_pair(key,value));
+            hashVal = utils::hash(key.c_str());
+            ss << hashVal << "#" << fename;
+            entity->feature.push_back(std::make_pair(ss.str(),value));
+            ss.str(std::string());
         }
     }catch (const std::exception &e){
         std::cout << "exception @parseLineToEntity : " << e.what() << " line: "<< line << std::endl;
