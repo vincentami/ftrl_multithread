@@ -242,6 +242,7 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     label = atoi(splitRes[0].c_str());
     if (!(label == 0 ||label == 1)){
         cout << "labe " << label << endl;
+        cout << "wrong "<< splitRes[0]<< ":"<<splitRes[1]<< endl;
         return false;  
     }
     splitRes.erase(splitRes.begin());
