@@ -247,14 +247,10 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     splitRes.erase(splitRes.begin());
 
     string modelName(splitRes[0]);
-    size_t index = modelName.find(MODELNAME);
-    if (index == std::string::npos){
-        return false;
-    }else {
-        splitRes.erase(splitRes.begin());
-    }    
+    fename = modelName;
 
-    fename = "M1";
+    splitRes.erase(splitRes.begin());
+
     return true;
 }
 
