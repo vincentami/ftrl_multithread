@@ -261,6 +261,13 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     }
 
     ss.str(vec[13]); 
+    i = 0;
+    while( ss >> item){
+        i++;
+        splitRes.push_back(item);
+        cout << i << ":"<<item <<endl;  
+    }
+    /*
     item = "";
     delim = 0;
     i = 0;
@@ -273,7 +280,7 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
             cout << i << ":" << item <<endl;
         }
         item.clear();
-    } 
+    } */
 
     fename = "10^1^121";
 
