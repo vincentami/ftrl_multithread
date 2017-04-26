@@ -232,10 +232,13 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
 
     splitRes.reserve(1024);
     ss.str(line);
+    int i = 0;
     while (std::getline(ss, item, delim)){
+        i++;
         if (!(item.length() == 1 && isblank(item.at(0))) 
             && (item.length() != 0)){
             splitRes.push_back(item);
+            cout << i << ":" << item <<endl;
         }
         item.clear();
     } 
