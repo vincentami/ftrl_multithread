@@ -260,14 +260,23 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
         return false;  
     }
 
-    ss.str(vec[13]); 
-    
+    string pattern = " ";
+    item = vec[13];
+    std::string::size_type size = item.size();
+    std::string::size_type pos;
+    for (uint32_t i = 0; i< size; i++){
+        pos = item.find(pattern,i);
+        if(pos < size){
+            splitRes.push_back(item.substr(i,pos-i));
+            i = pos+pattern.size()-1;     
+        }
+    }    
     /*i = 0;
     while( ss >> item){
         i++;
         splitRes.push_back(item);
         cout << i << ":"<<item <<endl;  
-    }*/
+    }
     
     item = "";
     delim = '\40';
@@ -281,7 +290,7 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
             cout << i << ":" << item <<endl;
         }
         item.clear();
-    } 
+    } */
 
     fename = "10^1^121";
 
