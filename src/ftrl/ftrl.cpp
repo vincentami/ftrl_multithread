@@ -264,6 +264,8 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     item = "";
     delim = 0;
     i = 0;
+    cout << ss.str() << endl;
+    cout << "getLine:" << std::getline(ss, item, delim) << endl;
     while (std::getline(ss, item, delim)){
         i++;
         {
