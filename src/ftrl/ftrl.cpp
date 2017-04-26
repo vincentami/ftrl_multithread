@@ -235,11 +235,11 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     } 
 
     if (splitRes.size() <= 14){
-        if(splitRes.size() == 14){
+        /*if(splitRes.size() == 14){
             cout << "splitRes.size:" << splitRes[14] << endl;
         }else{
             cout << "splitRes.size()" << splitRes.size() << endl;
-        }
+        }*/
         return false;
     }
 
