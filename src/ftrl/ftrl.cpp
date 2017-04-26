@@ -239,7 +239,6 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
         if (!(item.length() == 1 && isblank(item.at(0))) 
             && (item.length() != 0)){
             vec.push_back(item);
-            cout << i << ":" << item <<endl;
         }
         item.clear();
     } 
@@ -271,30 +270,10 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
             i = pos+pattern.size()-1;     
         }
     }    
-    /*i = 0;
-    while( ss >> item){
-        i++;
-        splitRes.push_back(item);
-        cout << i << ":"<<item <<endl;  
-    }
-    
-    item = "";
-    delim = '\40';
-    i = 0;
-    cout << ss.str() << endl;
-    cout << "getLine:" << (!std::getline(ss, item, delim)) << endl;
-    while (std::getline(ss, item, delim)){
-        i++;
-        {
-            splitRes.push_back(item);
-            cout << i << ":" << item <<endl;
-        }
-        item.clear();
-    } */
 
     fename = "10^1^121";
 
-    std::cout << "tokensize:" << splitRes.size() << std::endl;
+    //std::cout << "tokensize:" << splitRes.size() << std::endl;
     /*
     string modelName(splitRes[0]);
     fename = modelName;
