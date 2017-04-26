@@ -5,7 +5,7 @@ using std::pair;
 using namespace std;
 
 #define TOKEN           ('\t')
-#define TOKEN_INTER     ('#')
+#define TOKEN_INTER     (':')
 #define MODELNAME       ("MODEL#")  
 
 const int cap = 15000;
@@ -259,6 +259,7 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     splitRes.erase(splitRes.begin(), splitRes.begin()+14);
     fename = "10^1^121";
 
+    std::cout << "tokensize:" << splitRes.size() << std::endl;
     /*
     string modelName(splitRes[0]);
     fename = modelName;
