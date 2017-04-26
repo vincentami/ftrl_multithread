@@ -62,7 +62,7 @@ public:
                 }
                 ModelUnit *modelUnit= new ModelUnit(dList[0], dList[1], dList[2], dList[3], dList[4]);
                 vMap.insert(std::make_pair(key,modelUnit));
-                std::cout << "LOAD:" << key << std::endl;
+                //std::cout << "LOAD:" << key << std::endl;
             }catch(const std::exception &e){
                 std::cout << "exception @loadModel : " << e.what() << " index: "<< index << " value: " << r[index] 
                 << " line: "<< line << std::endl;
