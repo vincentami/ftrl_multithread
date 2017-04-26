@@ -11,6 +11,8 @@ using namespace std;
 const int cap = 15000;
 const int log_num =200000;
 
+static  int trainNo = 0;
+
 bool FTRL::init(int type){
     sem_init(&sem,0,0);
     sem_init(&semPro,0,1);
@@ -55,7 +57,7 @@ void FTRL::inputThread(){
             if(line_num%log_num==0)
             {
                 if(type == 1)
-                    std::cout<<line_num<<" line has finished" <<std::endl;
+                    std::cout<<line_num<<" line has finished" << trainNo << ":"<<(trainNo*100/(line_num+1)) <<std::endl;
             }
         }
         queueMtx.unlock();
@@ -86,12 +88,16 @@ void FTRL::trainThread(){
         }
         queueMtx.unlock();
         sem_post(&semPro);
+        int trainNum = 0;
         for(unsigned int i=0;i<input_vec.size();i++){
             parseSuc = parseLineToEntity(input_vec[i], entity);
             if (parseSuc) {
+                trainNum++;
                 train(entity->feature,entity->label);
             }
         }
+
+        trainNo += trainNum;
         if(finished_flag)
             break;
     }
