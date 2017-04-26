@@ -234,7 +234,7 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
         item.clear();
     } 
 
-    if (splitRes.size() <= 2){
+    if (splitRes.size() <= 14){
         cout << "splitRes.size()" << splitRes.size() << endl;
         return false;
     }
@@ -245,12 +245,15 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
         cout << "wrong "<< splitRes[0]<< ":"<<splitRes[1]<< endl;
         return false;  
     }
-    splitRes.erase(splitRes.begin());
 
+    splitRes.erase(splitRes.begin(), splitRes.begin()+14);
+    fename = "10^1^121";
+
+    /*
     string modelName(splitRes[0]);
     fename = modelName;
 
-    splitRes.erase(splitRes.begin());
+    splitRes.erase(splitRes.begin());*/
 
     return true;
 }
