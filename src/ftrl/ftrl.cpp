@@ -230,9 +230,40 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
     string item = "";
     char delim = '\t';
 
+    std::vector<string> vec;
     splitRes.reserve(1024);
     ss.str(line);
     int i = 0;
+    while (std::getline(ss, item, delim)){
+        i++;
+        if (!(item.length() == 1 && isblank(item.at(0))) 
+            && (item.length() != 0)){
+            vec.push_back(item);
+            cout << i << ":" << item <<endl;
+        }
+        item.clear();
+    } 
+
+    if (vec.size() != 14){
+        /*if(splitRes.size() == 14){
+            cout << "splitRes.size:" << splitRes[14] << endl;
+        }else{
+            cout << "splitRes.size()" << splitRes.size() << endl;
+        }*/
+        return false;
+    }
+
+    label = atoi(vec[0].c_str());
+    if (!(label == 0 ||label == 1)){
+        cout << "labe " << label << endl;
+        cout << "wrong "<< vec[0]<< ":"<<vec[1]<< endl;
+        return false;  
+    }
+
+    ss.str(vec[13]); 
+    item = "";
+    delim = ' ';
+    i = 0;
     while (std::getline(ss, item, delim)){
         i++;
         if (!(item.length() == 1 && isblank(item.at(0))) 
@@ -243,23 +274,6 @@ double FTRL::predict(const std::vector<pair<std::string, double> >& fea) {
         item.clear();
     } 
 
-    if (splitRes.size() <= 14){
-        /*if(splitRes.size() == 14){
-            cout << "splitRes.size:" << splitRes[14] << endl;
-        }else{
-            cout << "splitRes.size()" << splitRes.size() << endl;
-        }*/
-        return false;
-    }
-
-    label = atoi(splitRes[0].c_str());
-    if (!(label == 0 ||label == 1)){
-        cout << "labe " << label << endl;
-        cout << "wrong "<< splitRes[0]<< ":"<<splitRes[1]<< endl;
-        return false;  
-    }
-
-    splitRes.erase(splitRes.begin(), splitRes.begin()+14);
     fename = "10^1^121";
 
     std::cout << "tokensize:" << splitRes.size() << std::endl;
